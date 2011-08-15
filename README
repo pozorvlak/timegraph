@@ -1,0 +1,33 @@
+This is a script to run a program with a bunch of different arguments, and
+produce timing data in a simple line-oriented format. Perhaps you want to
+illustrate your talk with some graphs showing program behaviour before and
+after your clever optimizations.
+
+Usage:
+
+	timegraph.pl [command to measure] arg1 arg2 arg3 arg4
+
+For instance:
+
+	timegraph.pl sleep {1..10} > sleep.gph
+
+After approximately 55 seconds, the file sleep.gph will contain something like
+
+Argument	Time
+1	1.005397
+2	2.00559
+3	3.005549
+4	4.005634
+5	5.011896
+6	6.0073
+7	7.016818
+8	8.013662
+9	9.008593
+10	10.011329
+
+To plot this in GNU R, start up an R session and type
+
+s = read.table('sleep.gph', header=TRUE)
+plot(s)
+
+
