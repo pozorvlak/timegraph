@@ -2,9 +2,15 @@
 
 library(utils)
 library(graphics)
+first <- TRUE
 for ( file in argv ) {
 	var = read.table(file, header=TRUE)
-	plot(var)
-	readline("Press <Enter> to continue")
+	if ( first ) {
+		plot(var)
+		first <- FALSE
+	} else {
+		points(var)
+	}
 }
+readline("Press <Enter> to continue")
 q("no")
