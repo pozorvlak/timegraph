@@ -1,0 +1,10 @@
+#!/home/miles/bin/setR
+
+library(utils)
+library(graphics)
+for ( file in argv ) {
+	var = read.table(file, header=TRUE)
+	plot(var)
+	readline("Press <Enter> to continue")
+}
+q("no")
