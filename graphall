@@ -6,10 +6,10 @@ first <- TRUE
 for ( file in argv ) {
 	var = read.table(file, header=TRUE)
 	if ( first ) {
-		plot(var)
+		plot(var, type="l")
 		first <- FALSE
 	} else {
-		points(var)
+		points(var, type="l")
 	}
 }
 readline("Press <Enter> to continue")
