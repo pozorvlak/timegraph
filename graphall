@@ -1,4 +1,4 @@
-#!/home/miles/bin/setR
+#!/usr/bin/env setR
 
 library(utils)
 library(graphics)
